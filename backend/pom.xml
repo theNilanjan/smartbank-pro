@@ -110,6 +110,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- PostgreSQL Database (for Render deployment) -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- H2 Database (for local development) -->
         <dependency>
             <groupId>com.h2database</groupId>
