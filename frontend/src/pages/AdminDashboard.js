@@ -154,8 +154,7 @@ function AdminDashboard() {
               </ul>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
         <div className="row">
           <div className="col-md-3">
