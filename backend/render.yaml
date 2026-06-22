@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: smartbank-pro-backend
+    env: java
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/smartbank-pro-1.0.0.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: smartbank-pro-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: smartbank-pro-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: smartbank-pro-db
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRATION
+        value: "86400000"
+
+databases:
+  - name: smartbank-pro-db
+    databaseName: smartbank_pro
+    user: smartbank_user
