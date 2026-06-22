@@ -174,83 +174,7 @@ UPDATE users SET role = 'ADMIN' WHERE email = 'your-email@example.com';
 ### Admin
 - `GET /api/admin/dashboard` - Get dashboard metrics (Admin only)
 
-## 🧪 Testing
 
-### Backend Tests
-```bash
-cd backend
-mvn test
-```
-
-### Frontend Tests
-```bash
-cd frontend
-npm test
-```
-
-## 🚀 Deployment
-
-### Backend Deployment (Render/Railway)
-
-1. **Create a MySQL database** on your cloud provider
-2. **Set environment variables**:
-   - `SPRING_DATASOURCE_URL`
-   - `SPRING_DATASOURCE_USERNAME`
-   - `SPRING_DATASOURCE_PASSWORD`
-   - `JWT_SECRET`
-3. **Deploy** using the platform's CLI or connect your GitHub repository
-4. **Build command**: `mvn clean package`
-5. **Start command**: `java -jar target/smartbank-pro-1.0.0.jar`
-
-### Frontend Deployment (Vercel)
-
-1. **Update API base URL** in `src/api/axios.js` to your deployed backend URL
-2. **Connect your GitHub repository** to Vercel
-3. **Configure build settings**:
-   - Build command: `npm run build`
-   - Output directory: `build`
-4. **Deploy**
-
-## 🔧 Environment Variables
-
-### Backend
-- `SPRING_DATASOURCE_URL` - Database connection URL
-- `SPRING_DATASOURCE_USERNAME` - Database username
-- `SPRING_DATASOURCE_PASSWORD` - Database password
-- `JWT_SECRET` - Secret key for JWT token generation
-- `JWT_EXPIRATION` - Token expiration time in milliseconds
-
-### Frontend
-- `REACT_APP_API_URL` - Backend API URL (for production)
-
-## 📝 Database Schema
-
-### Users Table
-- `id` (PK, Long)
-- `fullName` (String)
-- `email` (String, Unique)
-- `password` (String, BCrypt encrypted)
-- `role` (Enum: CUSTOMER, ADMIN)
-- `createdAt` (DateTime)
-
-### Accounts Table
-- `id` (PK, Long)
-- `accountNumber` (String, Unique, 16 digits)
-- `accountType` (Enum: SAVINGS, CURRENT)
-- `balance` (BigDecimal)
-- `status` (Enum: ACTIVE, FROZEN, CLOSED)
-- `createdAt` (DateTime)
-- `user_id` (FK, Long)
-
-### Transactions Table
-- `id` (PK, Long)
-- `transactionType` (Enum: DEPOSIT, WITHDRAWAL, TRANSFER)
-- `amount` (BigDecimal)
-- `description` (String)
-- `transactionDate` (DateTime)
-- `account_id` (FK, Long)
-- `from_account_id` (FK, Long, nullable)
-- `to_account_id` (FK, Long, nullable)
 
 ## 🔒 Security Features
 
@@ -278,7 +202,7 @@ This project is for educational purposes.
 
 ## 👨‍💻 Author
 
-Built as a production-ready full-stack banking application for Java Full Stack interview preparation.
+Nilanjan Ghosh
 
 ## 🙏 Acknowledgments
 
