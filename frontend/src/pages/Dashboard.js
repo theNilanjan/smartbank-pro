@@ -53,24 +53,7 @@ function Dashboard() {
   const user = authService.getCurrentUser();
   const [showSplash, setShowSplash] = useState(true);
 
-  useEffect(() => {
-    loadAccounts();
-    // Hide splash screen after 3 seconds
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Get greeting based on time of day
-  const getGreeting = () => {
-    const hour = new Date().getHours();
-    if (hour < 12) return '🌅 Good Morning';
-    if (hour < 18) return '☀️ Good Afternoon';
-    return '🌙 Good Evening';
-  };
-
-  const loadAccounts = async () => {
+  const loadAccounts = useCallback(async () => {
     try {
       const data = await accountService.getUserAccounts(user.id);
       setAccounts(data);
@@ -81,6 +64,23 @@ function Dashboard() {
     } catch (err) {
       setError('Failed to load accounts');
     }
+  }, [user.id]);
+
+  useEffect(() => {
+    loadAccounts();
+    // Hide splash screen after 3 seconds
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [loadAccounts]);
+
+  // Get greeting based on time of day
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return '🌅 Good Morning';
+    if (hour < 18) return '☀️ Good Afternoon';
+    return '🌙 Good Evening';
   };
 
   const loadTransactions = async (accountId) => {
