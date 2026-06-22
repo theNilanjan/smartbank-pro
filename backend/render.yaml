@@ -1,9 +1,9 @@
 services:
   - type: web
     name: smartbank-pro-backend
-    env: java
-    buildCommand: ./mvnw clean package -DskipTests
-    startCommand: java -jar target/smartbank-pro-1.0.0.jar
+    env: docker
+    dockerContext: .
+    dockerfilePath: Dockerfile
     envVars:
       - key: SPRING_DATASOURCE_URL
         fromDatabase:
