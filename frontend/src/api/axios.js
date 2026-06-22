@@ -29,7 +29,7 @@ import axios from 'axios';
  * handling across the application."
  */
 const api = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: 'https://smartbank-pro-j74m.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
