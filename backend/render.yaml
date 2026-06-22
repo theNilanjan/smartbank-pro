@@ -9,7 +9,7 @@ services:
         fromDatabase:
           name: smartbank-pro-db
           property: connectionString
-      - key: DATABASE_USERNAME
+      - key: DATABASE_USER
         fromDatabase:
           name: smartbank-pro-db
           property: user
