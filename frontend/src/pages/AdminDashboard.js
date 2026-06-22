@@ -43,6 +43,7 @@ function AdminDashboard() {
 
   const user = authService.getCurrentUser();
   const [showSplash, setShowSplash] = useState(true);
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
   useEffect(() => {
     loadDashboardData();
@@ -115,12 +116,17 @@ function AdminDashboard() {
           <div className="container-fluid">
             <span className="navbar-brand">
               <span className="me-2">🏦</span>
-              <span className="fw-bold">SmartBank Pro - Admin Dashboard</span>
+              <span className="fw-bold">SmartBank Pro - Admin</span>
             </span>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button 
+              className="navbar-toggler" 
+              type="button" 
+              onClick={() => setNavbarOpen(!navbarOpen)}
+              aria-expanded={navbarOpen}
+            >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse show" id="navbarNav">
+            <div className={`collapse navbar-collapse ${navbarOpen ? 'show' : ''}`} id="navbarNav">
               <ul className="navbar-nav me-auto">
                 <li className="nav-item">
                   <span className="nav-link">
@@ -128,13 +134,13 @@ function AdminDashboard() {
                     Admin: {user.fullName}
                   </span>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item d-md-none">
                   <span className="nav-link">
                     <span className="me-1">📧</span>
                     {user.email}
                   </span>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item d-md-none">
                   <span className="nav-link">
                     <span className="me-1">🛡️</span>
                     Administrator
@@ -143,7 +149,7 @@ function AdminDashboard() {
               </ul>
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item greeting-animation">
-                  <span className="nav-link">{getGreeting()}! 👋</span>
+                  <span className="nav-link d-none d-md-block">{getGreeting()}! 👋</span>
                 </li>
                 <li className="nav-item">
                   <button className="btn btn-outline-light btn-sm ms-2" onClick={handleLogout}>

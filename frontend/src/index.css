@@ -368,3 +368,181 @@ code {
     opacity: 1;
   }
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Navbar improvements */
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-collapse {
+    background-color: #0d6efd !important;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Sidebar stacking */
+  .col-md-3 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .col-md-9 {
+    width: 100%;
+  }
+
+  /* Card adjustments */
+  .card {
+    margin-bottom: 15px;
+  }
+
+  .card-header {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  /* Balance cards */
+  .balance-amount {
+    font-size: 1.8rem;
+  }
+
+  /* Form controls */
+  .form-control,
+  .form-select {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 12px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .btn-sm {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  /* Table responsiveness */
+  .table-responsive {
+    font-size: 0.85rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+
+  /* Developer badge */
+  .developer-badge {
+    font-size: 12px;
+    padding: 8px 15px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  /* Splash screen */
+  .splash-greeting {
+    font-size: 1.8rem;
+  }
+
+  .splash-subtitle {
+    font-size: 1rem;
+  }
+
+  .splash-emoji {
+    font-size: 3rem;
+  }
+
+  /* Stats cards */
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  /* List group */
+  .list-group-item {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Alert messages */
+  .alert {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+  }
+
+  /* Transaction rows */
+  .transaction-row {
+    padding: 10px 0;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small screens */
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .balance-amount {
+    font-size: 1.5rem;
+  }
+
+  .card-header {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+  }
+
+  .developer-badge {
+    display: none; /* Hide on very small screens */
+  }
+
+  .splash-greeting {
+    font-size: 1.5rem;
+  }
+
+  .splash-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure logout button is always visible */
+.btn-outline-light {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white !important;
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white !important;
+}
+
+/* Mobile navbar toggle visibility */
+.navbar-toggler {
+  border: none;
+  padding: 5px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
