@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { authService } from './api/authService';
+import { MAINTENANCE_MODE } from './config';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
+import Maintenance from './pages/Maintenance';
 
 /**
  * App.js - Main application component with routing
@@ -50,6 +52,22 @@ const AdminRoute = ({ children }) => {
 };
 
 function App() {
+  // If maintenance mode is enabled, show maintenance page for all routes except admin
+  if (MAINTENANCE_MODE) {
+    return (
+      <Router>
+        <Routes>
+          <Route path="/admin" element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          } />
+          <Route path="*" element={<Maintenance />} />
+        </Routes>
+      </Router>
+    );
+  }
+
   return (
     <Router>
       <Routes>

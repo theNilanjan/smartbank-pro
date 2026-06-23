@@ -204,24 +204,42 @@ code {
   background-color: #0d6efd !important;
 }
 
+/* Force white text on navbar-dark */
 .navbar-dark .navbar-brand,
-.navbar-dark .nav-link {
-  color: white !important;
+.navbar-dark .navbar-brand span,
+.navbar-dark .nav-link,
+.navbar-dark .nav-link span {
+  color: #ffffff !important;
 }
 
 .navbar-dark .navbar-brand:hover,
-.navbar-dark .nav-link:hover {
+.navbar-dark .navbar-brand:hover span,
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link:hover span {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .navbar-dark .btn-outline-light {
-  color: white !important;
-  border-color: white !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  background-color: transparent !important;
 }
 
 .navbar-dark .btn-outline-light:hover {
-  background-color: white !important;
+  background-color: #ffffff !important;
   color: #0d6efd !important;
+}
+
+/* Also handle bg-dark navbar */
+.navbar-dark.bg-dark {
+  background-color: #212529 !important;
+}
+
+.navbar-dark.bg-dark .navbar-brand,
+.navbar-dark.bg-dark .navbar-brand span,
+.navbar-dark.bg-dark .nav-link,
+.navbar-dark.bg-dark .nav-link span {
+  color: #ffffff !important;
 }
 
 /* List group items */
