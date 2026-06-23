@@ -20,4 +20,4 @@
  * 4. Vercel will automatically deploy with normal functionality
  */
 
-export const MAINTENANCE_MODE = true; // Set to true to enable maintenance mode
+export const MAINTENANCE_MODE = false; // Set to true to enable maintenance mode
