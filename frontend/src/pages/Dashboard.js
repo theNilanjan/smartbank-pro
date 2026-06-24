@@ -201,6 +201,51 @@ function Dashboard() {
                     {user.email}
                   </span>
                 </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'accounts' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('accounts'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    My Accounts
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'deposit' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('deposit'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    Deposit
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'withdraw' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('withdraw'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    Withdraw
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'transfer' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('transfer'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    Transfer
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'history' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('history'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    Transaction History
+                  </button>
+                </li>
               </ul>
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item greeting-animation">
@@ -218,49 +263,7 @@ function Dashboard() {
         </nav>
 
         <div className="row">
-          <div className="col-md-3">
-          <div className="card">
-            <div className="card-header">
-              <h5 className="mb-0">Menu</h5>
-            </div>
-            <div className="card-body p-0">
-              <div className="list-group list-group-flush">
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'accounts' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('accounts')}
-                >
-                  My Accounts
-                </button>
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'deposit' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('deposit')}
-                >
-                  Deposit
-                </button>
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'withdraw' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('withdraw')}
-                >
-                  Withdraw
-                </button>
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'transfer' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('transfer')}
-                >
-                  Transfer
-                </button>
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'history' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('history')}
-                >
-                  Transaction History
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-9">
+          <div className="col-12">
           {error && <div className="alert alert-danger">{error}</div>}
           {success && <div className="alert alert-success">{success}</div>}
 

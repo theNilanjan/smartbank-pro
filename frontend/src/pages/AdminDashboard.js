@@ -146,6 +146,42 @@ function AdminDashboard() {
                     Administrator
                   </span>
                 </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'overview' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('overview'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    Overview
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'users' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('users'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    Users
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'accounts' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('accounts'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    Accounts
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button 
+                    className={`nav-link ${activeTab === 'transactions' ? 'active' : ''}`}
+                    onClick={() => { setActiveTab('transactions'); setNavbarOpen(false); }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    Transactions
+                  </button>
+                </li>
               </ul>
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item greeting-animation">
@@ -163,43 +199,7 @@ function AdminDashboard() {
         </nav>
 
         <div className="row">
-          <div className="col-md-3">
-          <div className="card">
-            <div className="card-header bg-dark text-white">
-              <h5 className="mb-0">Admin Menu</h5>
-            </div>
-            <div className="card-body p-0">
-              <div className="list-group list-group-flush">
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'overview' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('overview')}
-                >
-                  Overview
-                </button>
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'users' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('users')}
-                >
-                  Users
-                </button>
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'accounts' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('accounts')}
-                >
-                  Accounts
-                </button>
-                <button
-                  className={`list-group-item list-group-item-action ${activeTab === 'transactions' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('transactions')}
-                >
-                  Transactions
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-9">
+          <div className="col-12">
           {error && <div className="alert alert-danger">{error}</div>}
           {success && <div className="alert alert-success">{success}</div>}
 
