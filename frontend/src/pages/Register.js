@@ -36,7 +36,6 @@ function Register() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('CUSTOMER');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -47,7 +46,7 @@ function Register() {
     setLoading(true);
 
     try {
-      await authService.register(fullName, email, password, role);
+      await authService.register(fullName, email, password);
       navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed. Please try again.');
@@ -107,24 +106,6 @@ function Register() {
                       required
                       minLength="6"
                     />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="role" className="form-label">
-                      Role
-                    </label>
-                    <select
-                      className="form-select"
-                      id="role"
-                      value={role}
-                      onChange={(e) => setRole(e.target.value)}
-                      required
-                    >
-                      <option value="CUSTOMER">Customer</option>
-                      <option value="ADMIN">Admin</option>
-                    </select>
-                    <small className="form-text text-muted">
-                      Select "Admin" only if you need administrative access
-                    </small>
                   </div>
                   <button
                     type="submit"
