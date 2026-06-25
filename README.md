@@ -68,9 +68,6 @@ git clone <repository-url>
 cd smartbank-pro/backend
 ```
 
-2. **Configure MySQL Database**
-```sql
-CREATE DATABASE smartbank_pro;
 ```
 
 3. **Update application.properties**
@@ -106,18 +103,6 @@ npm start
 ```
 
 The frontend will start on `http://localhost:3000`
-
-## 🔐 Default Credentials
-
-After starting the application, register a new user through the registration page. The first user can be promoted to ADMIN role by updating the database:
-
-```sql
-UPDATE users SET role = 'ADMIN' WHERE email = 'your-email@example.com';
-```
-
-## 🤝 Contributing
-
-This is a demo project for interview preparation. Feel free to fork and customize it for your needs.
 
 ## 👨‍💻 Author
 
