@@ -58,39 +58,6 @@ A production-ready digital banking system built with Java 17, Spring Boot 3, Rea
 - Node.js 16+ and npm
 - MySQL 8.0+
 
-## 🏗 Project Structure
-
-```
-smartbank-pro/
-├── backend/
-│   ├── src/
-│   │   └── main/
-│   │       ├── java/com/smartbank/
-│   │       │   ├── config/          # Security and Swagger config
-│   │       │   ├── controller/      # REST controllers
-│   │       │   ├── dto/             # Data Transfer Objects
-│   │       │   ├── entity/          # JPA entities
-│   │       │   ├── enums/           # Enumerations
-│   │       │   ├── exception/       # Custom exceptions
-│   │       │   ├── repository/      # JPA repositories
-│   │       │   ├── security/        # JWT and security
-│   │       │   └── service/         # Business logic
-│   │       └── resources/
-│   │           └── application.properties
-│   └── pom.xml
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── api/             # API services
-│   │   ├── pages/           # React pages
-│   │   ├── App.js
-│   │   ├── index.css
-│   │   └── index.js
-│   └── package.json
-└── README.md
-```
-
 ## 🚀 Getting Started
 
 ### Backend Setup
@@ -121,9 +88,6 @@ mvn spring-boot:run
 
 The backend will start on `http://localhost:8080`
 
-5. **Access Swagger Documentation**
-Open `http://localhost:8080/swagger-ui.html` in your browser
-
 ### Frontend Setup
 
 1. **Navigate to frontend directory**
@@ -151,54 +115,9 @@ After starting the application, register a new user through the registration pag
 UPDATE users SET role = 'ADMIN' WHERE email = 'your-email@example.com';
 ```
 
-## 📊 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login user
-
-### Accounts
-- `POST /api/accounts` - Create new account
-- `GET /api/accounts/{id}` - Get account by ID
-- `GET /api/accounts/number/{accountNumber}` - Get account by number
-- `GET /api/accounts/user/{userId}` - Get user accounts
-- `PUT /api/accounts/{id}/freeze` - Freeze account (Admin only)
-- `PUT /api/accounts/{id}/activate` - Activate account (Admin only)
-
-### Transactions
-- `POST /api/transactions/deposit` - Deposit money
-- `POST /api/transactions/withdraw` - Withdraw money
-- `POST /api/transactions/transfer` - Transfer funds
-- `GET /api/transactions/history/{accountId}` - Get transaction history
-
-### Admin
-- `GET /api/admin/dashboard` - Get dashboard metrics (Admin only)
-
-
-
-## 🔒 Security Features
-
-- JWT-based stateless authentication
-- BCrypt password encryption
-- Role-based access control
-- CORS configuration
-- Input validation
-- SQL injection prevention (JPA/Hibernate)
-- XSS protection (React)
-
-## 📚 Documentation
-
-- Swagger UI: `http://localhost:8080/swagger-ui.html`
-- OpenAPI JSON: `http://localhost:8080/v3/api-docs`
-- Interview Preparation: See `INTERVIEW_PREPARATION.md`
-
 ## 🤝 Contributing
 
 This is a demo project for interview preparation. Feel free to fork and customize it for your needs.
-
-## 📄 License
-
-This project is for educational purposes.
 
 ## 👨‍💻 Author
 
